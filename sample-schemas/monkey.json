@@ -1,14 +1,11 @@
 {
+  "name": "monkey",
   "schema": {
-    "first_name": {
+    "name": {
       "type": "String",
       "default": ""
     },
-    "last_name": {
-      "type": "String",
-      "default": ""
-    },
-    "isDead": {
+    "alive": {
       "type": "Boolean",
       "default": false
     },
@@ -16,8 +13,5 @@
       "type": "Number",
       "default": false
     }
-  },
-  "statics": {
-
   }
 }

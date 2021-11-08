@@ -1,0 +1,58 @@
+
+  openapi: 3.0.0
+  info:
+    title: Monkey API
+    description: Generated API for Monkey
+    version: 0.0.1
+  servers:
+    - url: http://localhost:7777
+      description: local7777
+    - url: https://sugar-generate-demo-iqwznvcybq-uc.a.run.app
+      description: test
+    - url: http://localhost:3000
+      description: local3000
+  components:
+    schemas:
+
+      Monkey:
+        properties:
+          name:
+            type: string
+            default: ""
+          alive:
+            type: boolean
+            default: false
+          age:
+            type: number
+            default: false
+      ExtendedMonkey:
+        allOf:
+          - $ref: '#/components/schemas/Monkey'
+          - type: object
+            properties:
+              sort:
+                type: object
+                example: {"field":"asc","test":-1}
+              select:
+                type: object
+                example: {"first_name":1,"last_name":1}
+              populate:
+                type: string
+                default: ""
+                example: "anotherModel"
+              limit:
+                type: number
+                default: 10
+                example: 25
+              page:
+                type: number
+                default: 0
+                example: 1
+              search:
+                type: string
+                default: ""
+                example: "search string"
+              filters:
+                type: string
+                default: ""
+                example: "stringified array [{\"column\":{\"title\":\"Name\",\"field\":\"name\",\"type\":\"…Sort\":\"asc\",\"id\":0}},\"operator\":\"=\",\"value\":\"1\"}]\""
